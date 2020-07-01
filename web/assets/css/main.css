@@ -1,42 +1,48 @@
 @media only screen and (max-device-width: 3840px) {
     /* start of ultra hight resolutions 2K and 4K */
     .wrapper{
-        margin-left:10%!important;
+        /*margin-left:10%!important;*/
+        margin-left: 300px!important;
     }
 }
 
 @media only screen and (max-device-width: 2880px) {
     /* start of ultra hight resolutions 2K and 4K */
     .wrapper{
-        margin-left:5%!important;
+        /*margin-left:5%!important;*/
+        margin-left:300px!important;
     }
 }
 
 @media only screen and (max-device-width: 2160px) {
     /* start of hight resolution 1080P */
     .wrapper{
-        margin-left: 17%!important;
+        /*margin-left: 17%!important;*/
+        margin-left: 300px!important;
     }
 }
 
 @media only screen and (max-device-width: 1920px) {
     /* start of hight resolution 1080P */
     .wrapper{
-        margin-left: 20%!important;
+        /*margin-left: 20%!important;*/
+        margin-left: 300px!important;
     }
 }
 
 @media only screen and (max-device-width: 1080px) {
     /* start of hight resolution 1080P */
     .wrapper{
-        margin-left: 35%!important;
+        /*margin-left: 35%!important;*/
+        margin-left: 300px!important;
     }
 }
 
 @media only screen and (max-device-width: 1440px) {
     /* start of large tablet styles */
     .wrapper{
-        margin-left: 30%!important;
+        /*margin-left: 30%!important;*/
+        margin-left: 300px!important;
     }
 }
 
@@ -87,6 +93,12 @@
 }
 
 /*--------- GENERAL CSS -----------*/
+
+body{
+    font-family: 'Concert One', cursive;
+    /*font-family: 'Krona One', sans-serif;*/
+    /*font-family: 'Squada One', cursive;*/
+}
 
 a{
     color: #0277bd;

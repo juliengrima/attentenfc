@@ -8,6 +8,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Krona+One&family=Lobster&family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     </head>
     <body>
@@ -53,8 +54,11 @@
                 // COLLAPSE
                 $(document).ready(function () {
                     $('.collapsible').collapsible(
-                    );
-
+                            {
+                                inDuration:200,
+                                outDuration:200,
+                            }
+                        );
                 });
             </script>
         {% endblock %}
