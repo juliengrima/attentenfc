@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Krona+One&family=Lobster&family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     </head>
     <body>
@@ -17,8 +19,34 @@
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <!-- Compiled and minified JavaScript -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.6/lib/darkmode-js.min.js"></script>
             <scrip src="{{ asset('assets/js/main.js') }}"></scrip>
             <script>
+                // Darkmode
+                $("#darkTrigger").click(function(){
+                    if ($("body").hasClass("dark")){
+                        $("body").removeClass("dark");
+                    }
+                    else{
+                        $("body").addClass("dark");
+                    }
+
+                    if($(".sidenav").hasClass("dark")){
+                       $(".sidenav").removeClass("dark");
+                    }
+                    else{
+                        $(".sidenav").addClass("dark");
+                    }
+                });
+                $(document).ready(function () {
+                    var d = new Date();
+                    var h = d.getHours();
+
+                    if(h > 17 || h < 8){
+                        $("body").addClass("dark");
+                        $(".sidenav").addClass("dark");
+                    }
+                });
                 // SIDENAV
                 $(document).ready(function(){
                     $('.sidenav').sidenav();
@@ -26,8 +54,11 @@
                 // COLLAPSE
                 $(document).ready(function () {
                     $('.collapsible').collapsible(
-                    );
-
+                            {
+                                inDuration:200,
+                                outDuration:200,
+                            }
+                        );
                 });
             </script>
         {% endblock %}
