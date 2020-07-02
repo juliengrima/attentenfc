@@ -9,6 +9,16 @@ AppBundle\Entity\Complement:
             generator:
                 strategy: AUTO
     fields:
+        civility:
+            type: string
+            length: 10
+        birthname:
+            type: string
+            length: 30
+            nullable: true
+        birthdate:
+            type: date
+            nullable: true
         phone1:
             type: integer
             nullable: false
