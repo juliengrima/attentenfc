@@ -1,0 +1,26 @@
+AppBundle\Entity\DoctorOfficeComplement:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\DoctorOfficeComplementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        building:
+            type: string
+            length: '50'
+        level:
+            type: integer
+        door:
+            type: string
+            length: '10'
+            nullable: true
+    oneToOne:
+        office:
+            targetEntity: AppBundle\Entity\DoctorOffice
+            joinColumn:
+                name: office_id
+    lifecycleCallbacks: {  }

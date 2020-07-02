@@ -1,0 +1,18 @@
+AppBundle\Entity\Complement:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ComplementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        phone1:
+            type: integer
+            nullable: false
+        phone2:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }
