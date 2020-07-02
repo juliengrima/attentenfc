@@ -8,17 +8,32 @@ namespace AppBundle\Entity;
 class Complement
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
     /**
      * @var string
      */
+    private $civility;
+
+    /**
+     * @var string
+     */
+    private $birthname;
+
+    /**
+     * @var \DateTime
+     */
+    private $birthdate;
+
+    /**
+     * @var integer
+     */
     private $phone1;
 
     /**
-     * @var int
+     * @var integer
      */
     private $phone2;
 
@@ -26,7 +41,7 @@ class Complement
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -34,9 +49,81 @@ class Complement
     }
 
     /**
+     * Set civility
+     *
+     * @param string $civility
+     *
+     * @return Complement
+     */
+    public function setCivility($civility)
+    {
+        $this->civility = $civility;
+
+        return $this;
+    }
+
+    /**
+     * Get civility
+     *
+     * @return string
+     */
+    public function getCivility()
+    {
+        return $this->civility;
+    }
+
+    /**
+     * Set birthname
+     *
+     * @param string $birthname
+     *
+     * @return Complement
+     */
+    public function setBirthname($birthname)
+    {
+        $this->birthname = $birthname;
+
+        return $this;
+    }
+
+    /**
+     * Get birthname
+     *
+     * @return string
+     */
+    public function getBirthname()
+    {
+        return $this->birthname;
+    }
+
+    /**
+     * Set birthdate
+     *
+     * @param \DateTime $birthdate
+     *
+     * @return Complement
+     */
+    public function setBirthdate($birthdate)
+    {
+        $this->birthdate = $birthdate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthdate
+     *
+     * @return \DateTime
+     */
+    public function getBirthdate()
+    {
+        return $this->birthdate;
+    }
+
+    /**
      * Set phone1
      *
-     * @param string $phone1
+     * @param integer $phone1
      *
      * @return Complement
      */
@@ -50,7 +137,7 @@ class Complement
     /**
      * Get phone1
      *
-     * @return string
+     * @return integer
      */
     public function getPhone1()
     {
@@ -74,7 +161,7 @@ class Complement
     /**
      * Get phone2
      *
-     * @return int
+     * @return integer
      */
     public function getPhone2()
     {
