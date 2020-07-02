@@ -8,14 +8,25 @@
                 <div class="background">
                     <img src="{{ asset('') }}">
                 </div>
-                <div class="hide-on-med-and-down">
-                    <a id="darkTrigger" class="waves-effect waves-light btn">
-                        thème sombre
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <h3>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</h3>
+                    <a href="{{ path('fos_user_security_logout') }}" class="favorite styled">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                     </a>
+                {% else %}
+                    <p>non connecté</p>
+                {% endif %}
+                <div class="hide-on-med-and-down">
+                    <div class="center">
+                        <a id="darkTrigger" class="waves-effect waves-light btn">
+                            <span>thème sombre</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         {#NAVLINK#}
             <ul class="collapsible">
+                {% if is_granted("ROLE_USER") or is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN")%}
                 <li>
                     <div class="collapsible-header">First</div>
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Link 1.1</a></div>
@@ -32,11 +43,20 @@
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Link 3.1</a></div>
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Link 3.2</a></div>
                 </li>
+                {% else %}
+
+                {% endif %}
             </ul>
         </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     {#WRAPPER ON BOBY WITH MARGIN#}
     <div class="wrapper">
+        {#TITLE#}
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <h2>TITLE</h2>
+            </div>
+        </div>
 {% endblock %}
 {% block footer %}
         </div>

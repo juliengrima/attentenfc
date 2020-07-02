@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+        {# ADMIN CONNEXION FORM #}
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <div class="row">
+                        <p>Cyprum itidem insulam procul a continenti discretam et
+                            portuosam inter municipia crebra urbes duae faciunt claram
+                            Salamis et Paphus, altera Iovis delubris altera Veneris
+                            templo insignis. tanta autem tamque multiplici fertilitate
+                            abundat rerum omnium eadem Cyprus ut nullius externi indigens
+                            adminiculi indigenis viribus a fundamento ipso carinae ad supremos
+                            usque carbasos aedificet onerariam navem omnibusque armamentis
+                            instructam mari committat.</p>
+                    </div>
+                    <div class="row">
+                        <p>Et interdum acciderat, ut siquid in penetrali secreto nullo citerioris
+                            vitae ministro praesente paterfamilias uxori susurrasset in aurem,
+                            velut Amphiarao referente aut Marcio, quondam vatibus inclitis, postridie
+                            disceret imperator. ideoque etiam parietes arcanorum soli conscii timebantur.</p>
+                    </div>
+                    <div class="row">
+                        <p>Montius nos tumore inusitato quodam et novo ut rebellis et maiestati
+                            recalcitrantes Augustae per haec quae strepit incusat iratus nimirum
+                            quod contumacem praefectum, quid rerum ordo postulat ignorare dissimulantem
+                            formidine tenus iusserim custodiri.</p>
+                    </div>
+                </div>
+                <div class="col s12 m6 l6">
+                    <div class="container">
+                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                            {% if csrf_token %}
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            {% endif %}
+                            {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+                            <label for="username">Adresse e-mail</label>
+                            <input class="" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                            {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+                            <label for="password">Mot de passe</label>
+                            <input class=""type="password" id="password" name="_password" required="required" />
+                            <div class="login-submit">
+                            <label for="remember_me">
+                                <input class="filled-in" type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" />
+                                {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+                                <span>Rester connecter</span>
+                            </label>
+                            </div>
+                            {% block button %}
+                            <div class="login-submit">
+                            <button class="align-center"
+                                    type="submit"
+                                    id="_submit"
+                                    name="_submit"
+                                    value="{{ 'security.login.submit'|trans }}"
+                                    data-position="bottom"
+                                    data-delay="50"
+                                    data-tooltip="Enregistrer">
+                                <i class="material-icons">Se connecter</i>
+                            </button>
+                            </div>
+                            {% endblock %}
+                        </form>
+                    </div>
+                    <div class="center">
+                        <ul class="icons">
+                            <li>
+                                <a class="favorite styled" href="{{ path('fos_user_registration_register') }}">
+                                    S'enregistrer
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
