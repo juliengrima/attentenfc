@@ -40,39 +40,40 @@
                             {% if csrf_token %}
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                             {% endif %}
-                            {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+                            <label for="username">{{ 'security.login.username'|trans }}</label>
                             <label for="username">Adresse e-mail</label>
                             <input class="" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-                            {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+                            <label for="password">{{ 'security.login.password'|trans }}</label>
                             <label for="password">Mot de passe</label>
                             <input class=""type="password" id="password" name="_password" required="required" />
                             <div class="login-submit">
                             <label for="remember_me">
                                 <input class="filled-in" type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked" />
-                                {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+{#                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
                                 <span>Rester connecter</span>
                             </label>
                             </div>
                             {% block button %}
                             <div class="login-submit">
-                            <button class="align-center"
-                                    type="submit"
-                                    id="_submit"
-                                    name="_submit"
-                                    value="{{ 'security.login.submit'|trans }}"
-                                    data-position="bottom"
-                                    data-delay="50"
-                                    data-tooltip="Enregistrer">
-                                <i class="material-icons">Se connecter</i>
-                            </button>
+                                <button class="align-center btn"
+                                        type="submit"
+                                        id="_submit"
+                                        name="_submit"
+                                        value="{{ 'security.login.submit'|trans }}"
+                                        data-position="bottom"
+                                        data-delay="50"
+                                        data-tooltip="Enregistrer">
+                                    <i class="material-icons">Se connecter</i>
+                                </button>
                             </div>
                             {% endblock %}
                         </form>
                     </div>
                     <div class="center">
                         <ul class="icons">
+                            <li>ou</li>
                             <li>
-                                <a class="favorite styled" href="{{ path('fos_user_registration_register') }}">
+                                <a class="waves-effect waves-light btndark" href="{{ path('fos_user_registration_register') }}">
                                     S'enregistrer
                                 </a>
                             </li>

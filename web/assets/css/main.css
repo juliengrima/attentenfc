@@ -91,6 +91,24 @@
 .dark .btn{
     background-color: #424242;
 }
+.dark .btn:hover{
+    background-color: #9e9e9e;
+}
+
+.dark .btndark{
+    background-color: #bdbdbd;
+    color: #424242;
+    box-shadow: 2px 3px 5px #aaa; ;
+    padding: 2%;
+    border-radius: 15%;
+}
+.dark .btndark:hover{
+    background-color: #616161;
+}
+
+.dark input{
+    color: #ffffff;
+}
 
 /*--------- GENERAL CSS -----------*/
 
@@ -114,6 +132,17 @@ a:hover{
 
 .btn{
     background-color: #9e9e9e;
+}
+
+.btndark{
+    background-color: #616161;
+    color: #ffffff;
+    box-shadow: 2px 3px 5px #aaa; ;
+    padding: 2%;
+    border-radius: 15% 15%;
+}
+.btndark:hover{
+    background-color: #2bbbad;
 }
 
 .collapsible-align{

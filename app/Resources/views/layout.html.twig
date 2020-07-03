@@ -9,7 +9,7 @@
                     <img src="{{ asset('') }}">
                 </div>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <h3>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</h3>
+                    <p>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</p>
                     <a href="{{ path('fos_user_security_logout') }}" class="favorite styled">
                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                     </a>
@@ -44,7 +44,6 @@
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Link 3.2</a></div>
                 </li>
                 {% else %}
-
                 {% endif %}
             </ul>
         </ul>
