@@ -94,17 +94,20 @@
 .dark .btn:hover{
     background-color: #9e9e9e;
 }
-
-.dark .btndark{
-    background-color: #bdbdbd;
-    color: #424242;
-    box-shadow: 2px 3px 5px #aaa; ;
-    padding: 2%;
-    border-radius: 15%;
-}
-.dark .btndark:hover{
-    background-color: #616161;
-}
+    .dark .btndark{
+        background-color: #bdbdbd;
+        color: #424242;
+        box-shadow: 2px 3px 5px #aaa; ;
+        padding: 2%;
+        border-radius: 15%;
+    }
+    .dark .btndark:hover{
+        background-color: #616161;
+    }
+    .dark .btn-deconnect{
+        background-color: #e65100;
+        color: #ffffff;
+    }
 
 .dark input{
     color: #ffffff;
@@ -134,16 +137,20 @@ a:hover{
     background-color: #9e9e9e;
 }
 
-.btndark{
-    background-color: #616161;
-    color: #ffffff;
-    box-shadow: 2px 3px 5px #aaa; ;
-    padding: 2%;
-    border-radius: 15% 15%;
-}
-.btndark:hover{
-    background-color: #2bbbad;
-}
+    .btndark{
+        background-color: #616161;
+        color: #ffffff;
+        box-shadow: 2px 3px 5px #aaa; ;
+        padding: 2%;
+        border-radius: 15% 15%;
+    }
+    .btndark:hover{
+        background-color: #2bbbad;
+    }
+    .btn-deconnect{
+        background-color: #e65100;
+        color: #ffffff;
+    }
 
 .collapsible-align{
     margin-left:15%;
