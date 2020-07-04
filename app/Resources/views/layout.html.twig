@@ -5,19 +5,18 @@
         <ul id="slide-out" class="sidenav sidenav-fixed">
     {#USERVIEW#}
             <div class="user-view">
-                <div class="background">
-                    <img src="{{ asset('') }}">
+                <div class="background-userview center">
+{#                    <img src="{{ asset('') }}">#}
+                    <img src="https://media.giphy.com/media/tz6S94VbrauGs/giphy.gif" class="img-userview">
                 </div>
+                <div class="center">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <p>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</p>
-                    <div class="center">
-                        <a href="{{ path('fos_user_security_logout') }}" class="waves-effect waves-light btn btn-deconnect">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </div>
+{#                    <p>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</p>#}
+                    <p>{{ app.user.email }}</p>
                 {% else %}
                     <p>non connecté</p>
                 {% endif %}
+                </div>
 {#                <div class="hide-on-med-and-down">#}
 {#                    <div class="center">#}
 {#                        <a id="darkTrigger" class="waves-effect waves-light btn">#}
@@ -33,6 +32,9 @@
                     <div class="collapsible-header">Mon compte</div>
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Gérer mon profile</a></div>
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Gérer mes rendez-vous</a></div>
+                    <div class="collapsible-body"><a href="{{ path('fos_user_security_logout') }}" class="collapsible-align">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a></div>
 {#                    <div class="collapsible-body"><a class="collapsible-align" href="#">Link 1.3</a></div>#}
                 </li>
                     {% elseif is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
