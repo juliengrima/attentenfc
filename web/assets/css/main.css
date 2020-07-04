@@ -63,55 +63,49 @@
 }
 
 /** Dark CSS */
+/*.dark button {*/
+/*    background: #144098;*/
+/*    color: #fff;*/
+/*}*/
 
-.dark {
-    background-color: #424242;
-    color: #ffffff;
-}
+/*.dark .sidenav{*/
+/*    background: #616161;*/
+/*}*/
+/*.dark .collapsible-body{*/
+/*    background: #bdbdbd;*/
+/*}*/
 
-.dark button {
-    background: #144098;
-    color: #fff;
-}
+/*.dark a{*/
+/*    color: #0277bd;*/
+/*}*/
+/*.dark a:hover{*/
+/*    color: #e65100;*/
+/*}*/
 
-.dark .sidenav{
-    background: #616161;
-}
-.dark .collapsible-body{
-    background: #bdbdbd;
-}
+/*.dark .btn{*/
+/*    background-color: #424242;*/
+/*}*/
+/*.dark .btn:hover{*/
+/*    background-color: #9e9e9e;*/
+/*}*/
+/*    .dark .btndark{*/
+/*        background-color: #bdbdbd;*/
+/*        color: #424242;*/
+/*        box-shadow: 2px 3px 5px #aaa; ;*/
+/*        padding: 2%;*/
+/*        border-radius: 15%;*/
+/*    }*/
+/*    .dark .btndark:hover{*/
+/*        background-color: #616161;*/
+/*    }*/
+/*    .dark .btn-deconnect{*/
+/*        background-color: #e65100;*/
+/*        color: #ffffff;*/
+/*    }*/
 
-.dark a{
-    color: #0277bd;
-}
-.dark a:hover{
-    color: #e65100;
-}
-
-.dark .btn{
-    background-color: #424242;
-}
-.dark .btn:hover{
-    background-color: #9e9e9e;
-}
-    .dark .btndark{
-        background-color: #bdbdbd;
-        color: #424242;
-        box-shadow: 2px 3px 5px #aaa; ;
-        padding: 2%;
-        border-radius: 15%;
-    }
-    .dark .btndark:hover{
-        background-color: #616161;
-    }
-    .dark .btn-deconnect{
-        background-color: #e65100;
-        color: #ffffff;
-    }
-
-.dark input{
-    color: #ffffff;
-}
+/*.dark input{*/
+/*    color: #ffffff;*/
+/*}*/
 
 /*--------- GENERAL CSS -----------*/
 
@@ -156,3 +150,16 @@ a:hover{
     margin-left:15%;
 }
 
+.sidenav{
+    background: #d7ccc8;
+}
+
+/*--------- HOMEPAGE -----------*/
+.box{
+    margin-left: 15%;
+    width: 400px;
+    height: 500px;
+    border-style: groove;
+    border-color: #d7ccc8;
+    box-shadow: 3px 3px 3px #a1887f;
+}
