@@ -38,11 +38,15 @@ class ComplementController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $civilityForm = $_POST['civility'];
+            $complement->setCivility($civilityForm);
+            $complement->setUser($this->getUser());
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($complement);
             $em->flush();
 
-            return $this->redirectToRoute('complement_show', array('id' => $complement->getId()));
+            return $this->redirectToRoute('homepage');
         }
 
         return $this->render('complement/new.html.twig', array(

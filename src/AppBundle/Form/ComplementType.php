@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 
 class ComplementType extends AbstractType
 {
@@ -13,7 +14,12 @@ class ComplementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('civility')->add('birthname')->add('birthdate')->add('phone1')->add('phone2');
+        $builder->add('firstname')
+                ->add('name')
+                ->add('birthname')
+                ->add('birthdate')
+                ->add('phone1')
+                ->add('phone2');
     }/**
      * {@inheritdoc}
      */

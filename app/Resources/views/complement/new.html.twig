@@ -1,16 +1,59 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Complement creation</h1>
+    <div class="center">
+        <h3>Mon profile patient</h3>
+    </div>
+    <div class="box box-single img-circle bg-change">
+        {{ form_start(form) }}
+        <div class="container ">
+            <div>
+                <label for="civility" title="Civilité">Civilité</label>
+                <label>
+                    <input class="with-gap" name="civility" type="radio" value="Mme" checked />
+                    <span>Madame</span>
+                </label>
+                <label>
+                    <input class="with-gap" name="civility" type="radio" value="Mr" />
+                    <span>Monsieur</span>
+                </label>
+{#                <label for="gender" title="Civilité">Civilité</label>#}
+{#                {{ form_widget(form.civility, {'attr': {'type': 'list', 'class': ''}}) }}#}
+            </div>
+            <div>
+                <label for="firstname" title="Prénom">Prénom</label>
+                {{ form_widget(form.firstname, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+            <div>
+                <label for="name" title="Nom">Nom</label>
+                {{ form_widget(form.name, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+            <div>
+                <label for="birthname" title="Nom de naissance">Nom de naissance</label>
+                {{ form_widget(form.birthname, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+            <div>
+                <label for="birthdate" title="Date de naissance">Date de naissance</label>
+                {{ form_widget(form.birthdate, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+            <div>
+                <label for="phone1" title="Téléphone fix">Téléphone fix</label>
+                {{ form_widget(form.phone1, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+            <div>
+                <label for="phone2" title="Téléphone mobile">Téléphone mobile</label>
+                {{ form_widget(form.phone2, {'attr': {'type': 'list', 'class': ''}}) }}
+            </div>
+        </div>
+        <div class="center">
+            <input type="submit" value="Ajouter mon profile" class="align-center btn"/>
+        </div>
+        {{ form_end(form) }}
+    </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('complement_index') }}">Back to the list</a>
-        </li>
-    </ul>
+{#    <ul>#}
+{#        <li>#}
+{#            <a href="{{ path('complement_index') }}">Back to the list</a>#}
+{#        </li>#}
+{#    </ul>#}
 {% endblock %}

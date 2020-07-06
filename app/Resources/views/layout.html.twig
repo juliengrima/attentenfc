@@ -3,6 +3,11 @@
 {% block header %}
 {#SIDENAV#}
         <ul id="slide-out" class="sidenav sidenav-fixed">
+            <h3 class="container">
+                <h3>
+                    <a href="{{ path('homepage') }}" class="brand-logo center">Logo du site</a>
+                </h3>
+                </div>
     {#USERVIEW#}
             <div class="user-view">
                 <div class="background-userview center">
@@ -47,14 +52,11 @@
             </ul>
         </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="{{ path('homepage') }}" class="brand-logo center">Logo du site</a>
-        </div>
-    </nav>
     {#WRAPPER ON BOBY WITH MARGIN#}
     <div class="wrapper">
 {% endblock %}
 {% block footer %}
+        <input type="button" value="Show scrollWidth"
+               onclick="alert(document.getElementById('body').scrollWidth);">
         </div>
 {% endblock %}

@@ -15,17 +15,18 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        $userId = $this->getUser();
+        $userId = $this->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
-        $profile = $em->getRepository('AppBundle:Complement')->findBy(array('id' => $userId));
-        if ($profile != null){
-            return $this->render('default/index.html.twig', array(
-                'user' => $userId,
-                'profile' => $profile
-            ));
-        }
+        $profile = $em->getRepository('AppBundle:Complement')->findBy(array('user' => $userId));
+//        if ($profile != null){
+//            return $this->render('default/index.html.twig', array(
+//                'user' => $userId,
+//                'profile' => $profile
+//            ));
+//        }
         return $this->render('default/index.html.twig', array(
             'user' => $userId,
+            'profile' => $profile
         ));
     }
 

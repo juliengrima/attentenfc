@@ -9,12 +9,15 @@ AppBundle\Entity\Complement:
             generator:
                 strategy: AUTO
     fields:
+        civility:
+            type: string
+            length: 3
+        firstname:
+            type: string
+            length: 30
         name:
             type: string
             length: 30
-        civility:
-            type: string
-            length: 10
         birthname:
             type: string
             length: 30
@@ -24,8 +27,17 @@ AppBundle\Entity\Complement:
             nullable: true
         phone1:
             type: integer
-            nullable: false
+            nullable: true
         phone2:
             type: integer
             nullable: true
+            
+    oneToOne:
+        user:
+            targetEntity: UserBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+
+
     lifecycleCallbacks: {  }
