@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Complements list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Civility</th>
+                <th>Birthname</th>
+                <th>Birthdate</th>
+                <th>Phone1</th>
+                <th>Phone2</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for complement in complements %}
+            <tr>
+                <td><a href="{{ path('complement_show', { 'id': complement.id }) }}">{{ complement.id }}</a></td>
+                <td>{{ complement.civility }}</td>
+                <td>{{ complement.birthname }}</td>
+                <td>{% if complement.birthdate %}{{ complement.birthdate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ complement.phone1 }}</td>
+                <td>{{ complement.phone2 }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('complement_show', { 'id': complement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('complement_edit', { 'id': complement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('complement_new') }}">Create a new complement</a>
+        </li>
+    </ul>
+{% endblock %}

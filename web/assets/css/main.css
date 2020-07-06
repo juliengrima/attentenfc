@@ -123,6 +123,21 @@ a:hover{
     color: #e65100;
 }
 
+nav {
+    color: #fff;
+    /*background-color: #cddc39;*/
+    background-color: #90caf9;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    margin-top: -2%;
+    margin-bottom: 5%;
+    z-index: 2;
+}
+    .brand-logo{
+        margin-left: 10%;
+    }
+
 .login-submit{
     margin-top: 3%;
     text-align: center;
@@ -188,6 +203,10 @@ a:hover{
 .table-top-marge{
     padding-top: 5%;
     padding-bottom: 5%;
+}
+.valign-wrapper{
+    margin-top: 50%;
+    margin-left: 15%;
 }
 
 

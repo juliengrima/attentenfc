@@ -11,7 +11,6 @@
                 </div>
                 <div class="center">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-{#                    <p>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</p>#}
                     <p>{{ app.user.email }}</p>
                 {% else %}
                     <p>non connecté</p>
@@ -30,7 +29,7 @@
                 {% if is_granted("ROLE_USER") or is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN")%}
                 <li>
                     <div class="collapsible-header">Mon compte</div>
-                    <div class="collapsible-body"><a class="collapsible-align" href="#">Gérer mon profile</a></div>
+                    <div class="collapsible-body"><a class="collapsible-align" href="{{ path('fos_user_profile_edit', { 'id': app.user.id }) }}">Gérer mon profile</a></div>
                     <div class="collapsible-body"><a class="collapsible-align" href="#">Gérer mes rendez-vous</a></div>
                     <div class="collapsible-body"><a href="{{ path('fos_user_security_logout') }}" class="collapsible-align">
                             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -48,14 +47,13 @@
             </ul>
         </ul>
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="{{ path('homepage') }}" class="brand-logo center">Logo du site</a>
+        </div>
+    </nav>
     {#WRAPPER ON BOBY WITH MARGIN#}
     <div class="wrapper">
-        {#TITLE#}
-        <div class="row center">
-            <div class="col s12 m12 l12">
-                <h2>TITLE</h2>
-            </div>
-        </div>
 {% endblock %}
 {% block footer %}
         </div>

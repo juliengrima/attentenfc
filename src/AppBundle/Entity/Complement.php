@@ -37,6 +37,16 @@ class Complement
      */
     private $phone2;
 
+    /**
+     * @var string
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     */
+    private $name;
+
 
     /**
      * Get id
@@ -166,5 +176,53 @@ class Complement
     public function getPhone2()
     {
         return $this->phone2;
+    }
+
+    /**
+     * Set firstname.
+     *
+     * @param string $firstname
+     *
+     * @return Complement
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname.
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set name.
+     *
+     * @param string $name
+     *
+     * @return Complement
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

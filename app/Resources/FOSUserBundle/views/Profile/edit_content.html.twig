@@ -1,6 +1,6 @@
+{% extends 'base.html.twig' %}
 
-
-
+{% block login %}
 
 <div class="container">
 
@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col s12">
             {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-                {{ form_widget(form, { 'attr': {'class': 'input-size'}}) }}
+                {{ form_widget(form, { 'attr': {'class': ''}}) }}
                 {#<div>#}
                     {#<input type="submit" value="{{ 'profile.edit.submit'|trans }}" />#}
                 {#</div>#}
@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <div class="col s12">
-            <button class="btn-floating btn-large waves-effect waves-light green darken-1 tooltipped"
+            <button class="btn waves-effect waves-light"
                     type="submit"
                     id="_submit"
                     name="_submit"
@@ -27,7 +27,7 @@
                     data-position="bottom"
                     data-delay="50"
                     data-tooltip="Enregistrer">
-                <i class="material-icons">check</i>
+                Modifier
             </button>
         </div>
     </div>
@@ -35,4 +35,4 @@
 
 
 </div>
-
+{% endblock %}

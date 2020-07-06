@@ -9,6 +9,9 @@ AppBundle\Entity\Complement:
             generator:
                 strategy: AUTO
     fields:
+        name:
+            type: string
+            length: 30
         civility:
             type: string
             length: 10

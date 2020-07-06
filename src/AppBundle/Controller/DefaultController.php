@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use http\Client\Curl\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +16,17 @@ class DefaultController extends Controller
     {
         // replace this example code with whatever you need
         $userId = $this->getUser();
-        return $this->render('default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $profile = $em->getRepository('AppBundle:Complement')->findBy(array('id' => $userId));
+        if ($profile != null){
+            return $this->render('default/index.html.twig', array(
+                'user' => $userId,
+                'profile' => $profile
+            ));
+        }
+        return $this->render('default/index.html.twig', array(
+            'user' => $userId,
+        ));
     }
 
     /**

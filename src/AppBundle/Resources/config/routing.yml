@@ -1,0 +1,4 @@
+app_complement:
+    resource: "@AppBundle/Resources/config/routing/complement.yml"
+    prefix:   /Profile
+

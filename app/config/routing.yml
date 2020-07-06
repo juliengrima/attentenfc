@@ -8,3 +8,7 @@ app:
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
+    
+app_complement:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
