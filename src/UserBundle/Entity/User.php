@@ -15,7 +15,7 @@ class User extends BaseUser
 
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */

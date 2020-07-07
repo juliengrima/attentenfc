@@ -1,31 +1,73 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-        {#TITLE#}
-        <div class="row center">
-                <div class="col s12 m12 l12">
-                        <h2>TITLE</h2>
+    <div class="row">
+        <div class="col s12 m6 l6">
+            <div class="center">
+                <h5>Mon profil patient</h5>
+            </div>
+            <div class="box img-circle bg-change">
+                <div class="container">
+                    <table class="striped table-top">
+                        {% if profile != null %}
+                            {% for profile in profile %}
+                                <tr>
+                                    <td>Nom :</td>
+                                    <td>
+                                        {{ profile.civility }}
+                                        {% if profile.birthname != null %}
+                                            {{ profile.birthname }}
+                                        {% else %}
+                                            {{ profile.name }}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Prénom :</td>
+                                    <td>{{ profile.firstname }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Né(e) le :</td>
+                                    <td>{{ profile.birthdate }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tèl fix :</td>
+                                    <td>{{ profile.phone1 }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile :</td>
+                                    <td>{{ profile.phone2 }}</td>
+                                </tr>
+                            {% endfor %}
+                    </table>
+                        {% else %}
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a class="waves-effect waves-light btn" href="{{ path('complement_new') }}">Ajouter un profile</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        {% endif %}
                 </div>
+            </div>
         </div>
-        <div class="row center">
-                <div class="col s12 m6 l6">
-                        <p>DESCRIPTION DU SITE</p>
+        <div class="col s12 m6 l6">
+            <div class="center">
+                <h5>Mes rendez-vous</h5>
+            </div>
+            <div class="box-invert box bg-change">
+                <div class="container table-top-marge">
+                    <table class="striped">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="col s12 m6 l6">
-                        <p>ICI SERA L'EMPLACEMENT DE CONNEXTION</p>
-                </div>
+            </div>
         </div>
-        <div class="row center">
-                <div class="col s12 m3 l3">
-                        <p>JE NE SAIS PAS ENCORE</p>
-                </div>
-                <div class="col s12 m3 l3">
-                        <p>JE NE SAIS PAS ENCORE</p>
-                </div>
-                <div class="col s12 m3 l3">
-                        <p>JE NE SAIS PAS ENCORE</p>
-                </div>
-        </div>
+    </div>
 
 {% endblock %}
 

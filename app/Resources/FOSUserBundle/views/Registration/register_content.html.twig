@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block login %}
+    {% trans_default_domain 'FOSUserBundle' %}
+    <div class="row">
+        <div class="container">
+            <div class="center">
+            <h3 class="align-center">S'enregistrer</h3>
+            <a href="{{ path('password') }}" class="waves-effect waves-light btndark">Se connecter</a>
+            </div>
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                <label for="username">nom d'utilisateur</label>
+                {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+                {{ form_widget(form.username, { 'attr': {'class': 'input-size'}}) }}
+                <label for="username">E-mail</label>
+                {{ form_widget(form.email, { 'attr': {'class': 'input-size'}}) }}
+                {{ form_widget(form.plainPassword, { 'attr': {'class': 'input-size'}}) }}
+                <div class="login-submit">
+                    <button class="align-center btn"
+                            type="submit"
+                            id="_submit"
+                            name="_submit"
+                            value="{{ 'registration.submit'|trans }}"
+                            data-delay="50"
+                            data-tooltip="Enregistrer">
+                        <i class="material-icons">S'enregistrer</i>
+                    </button>
+
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

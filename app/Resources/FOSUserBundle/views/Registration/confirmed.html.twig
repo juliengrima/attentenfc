@@ -1,0 +1,13 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="center">
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}
+            <br>
+            <br>
+            <a href="{{ path('homepage') }}" class="waves-effect waves-light btn">Commencer</a>
+        </p>
+    </div>
+{% endblock fos_user_content %}

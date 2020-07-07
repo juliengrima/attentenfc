@@ -8,7 +8,7 @@ namespace AppBundle\Entity;
 class Complement
 {
     /**
-     * @var integer
+     * @var int
      */
     private $id;
 
@@ -20,28 +20,38 @@ class Complement
     /**
      * @var string
      */
+    private $firstname;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string|null
+     */
     private $birthname;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      */
     private $birthdate;
 
     /**
-     * @var integer
+     * @var int
      */
     private $phone1;
 
     /**
-     * @var integer
+     * @var int|null
      */
     private $phone2;
 
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -49,7 +59,7 @@ class Complement
     }
 
     /**
-     * Set civility
+     * Set civility.
      *
      * @param string $civility
      *
@@ -63,7 +73,7 @@ class Complement
     }
 
     /**
-     * Get civility
+     * Get civility.
      *
      * @return string
      */
@@ -73,13 +83,61 @@ class Complement
     }
 
     /**
-     * Set birthname
+     * Set firstname.
      *
-     * @param string $birthname
+     * @param string $firstname
      *
      * @return Complement
      */
-    public function setBirthname($birthname)
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname.
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set name.
+     *
+     * @param string $name
+     *
+     * @return Complement
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set birthname.
+     *
+     * @param string|null $birthname
+     *
+     * @return Complement
+     */
+    public function setBirthname($birthname = null)
     {
         $this->birthname = $birthname;
 
@@ -87,9 +145,9 @@ class Complement
     }
 
     /**
-     * Get birthname
+     * Get birthname.
      *
-     * @return string
+     * @return string|null
      */
     public function getBirthname()
     {
@@ -97,13 +155,13 @@ class Complement
     }
 
     /**
-     * Set birthdate
+     * Set birthdate.
      *
-     * @param \DateTime $birthdate
+     * @param \DateTime|null $birthdate
      *
      * @return Complement
      */
-    public function setBirthdate($birthdate)
+    public function setBirthdate($birthdate = null)
     {
         $this->birthdate = $birthdate;
 
@@ -111,9 +169,9 @@ class Complement
     }
 
     /**
-     * Get birthdate
+     * Get birthdate.
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getBirthdate()
     {
@@ -121,9 +179,9 @@ class Complement
     }
 
     /**
-     * Set phone1
+     * Set phone1.
      *
-     * @param integer $phone1
+     * @param int $phone1
      *
      * @return Complement
      */
@@ -135,9 +193,9 @@ class Complement
     }
 
     /**
-     * Get phone1
+     * Get phone1.
      *
-     * @return integer
+     * @return int
      */
     public function getPhone1()
     {
@@ -145,13 +203,13 @@ class Complement
     }
 
     /**
-     * Set phone2
+     * Set phone2.
      *
-     * @param integer $phone2
+     * @param int|null $phone2
      *
      * @return Complement
      */
-    public function setPhone2($phone2)
+    public function setPhone2($phone2 = null)
     {
         $this->phone2 = $phone2;
 
@@ -159,12 +217,41 @@ class Complement
     }
 
     /**
-     * Get phone2
+     * Get phone2.
      *
-     * @return integer
+     * @return int|null
      */
     public function getPhone2()
     {
         return $this->phone2;
+    }
+    /**
+     * @var \UserBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user.
+     *
+     * @param \UserBundle\Entity\User|null $user
+     *
+     * @return Complement
+     */
+    public function setUser(\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user.
+     *
+     * @return \UserBundle\Entity\User|null
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

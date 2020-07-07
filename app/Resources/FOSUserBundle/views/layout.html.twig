@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div>
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+            </div>
+            <div>
+                {% block button %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
+

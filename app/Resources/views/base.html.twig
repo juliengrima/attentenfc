@@ -11,8 +11,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Krona+One&family=Lobster&family=Squada+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     </head>
-    <body>
+    <body id="body">
         {% block header %}{% endblock %}
+        {% block login %}{% endblock %}
         {% block body %}{% endblock %}
         {% block footer %}{% endblock %}
         {% block javascripts %}
@@ -23,30 +24,30 @@
             <scrip src="{{ asset('assets/js/main.js') }}"></scrip>
             <script>
                 // Darkmode
-                $("#darkTrigger").click(function(){
-                    if ($("body").hasClass("dark")){
-                        $("body").removeClass("dark");
-                    }
-                    else{
-                        $("body").addClass("dark");
-                    }
-
-                    if($(".sidenav").hasClass("dark")){
-                       $(".sidenav").removeClass("dark");
-                    }
-                    else{
-                        $(".sidenav").addClass("dark");
-                    }
-                });
-                $(document).ready(function () {
-                    var d = new Date();
-                    var h = d.getHours();
-
-                    if(h > 17 || h < 8){
-                        $("body").addClass("dark");
-                        $(".sidenav").addClass("dark");
-                    }
-                });
+                // $("#darkTrigger").click(function(){
+                //     if ($("body").hasClass("dark")){
+                //         $("body").removeClass("dark");
+                //     }
+                //     else{
+                //         $("body").addClass("dark");
+                //     }
+                //
+                //     if($(".sidenav").hasClass("dark")){
+                //        $(".sidenav").removeClass("dark");
+                //     }
+                //     else{
+                //         $(".sidenav").addClass("dark");
+                //     }
+                // });
+                // $(document).ready(function () {
+                //     var d = new Date();
+                //     var h = d.getHours();
+                //
+                //     if(h > 17 || h < 8){
+                //         $("body").addClass("dark");
+                //         $(".sidenav").addClass("dark");
+                //     }
+                // });
                 // SIDENAV
                 $(document).ready(function(){
                     $('.sidenav').sidenav();

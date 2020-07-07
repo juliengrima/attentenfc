@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use http\Client\Curl\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,8 +15,26 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $userId = $this->getUser()->getId();
+        $em = $this->getDoctrine()->getManager();
+        $profile = $em->getRepository('AppBundle:Complement')->findBy(array('user' => $userId));
+//        if ($profile != null){
+//            return $this->render('default/index.html.twig', array(
+//                'user' => $userId,
+//                'profile' => $profile
+//            ));
+//        }
+        return $this->render('default/index.html.twig', array(
+            'user' => $userId,
+            'profile' => $profile
+        ));
+    }
+
+    /**
+     * @Route("/", name="password")
+     */
+    public function loginAction()
+    {
+        return $this->render('@FOSUser/Security/login.html.twig');
     }
 }
