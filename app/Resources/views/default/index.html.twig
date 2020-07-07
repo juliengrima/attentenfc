@@ -60,12 +60,43 @@
                 <div class="container table-top-marge">
                     <table class="striped">
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Trouver un médecin</a>
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+{#            <form method="post" name="search" action="{{ path('') }}" >#}
+            <form method="post" name="search" action="">
+                <div class="container">
+                    <label for="" title="Localité">Localité</label>
+                    <input type="text" name="profession" value="" placeholder="ou ?">
+                    <label for="" title="Profession">Profession</label>
+                    <input type="text" name="Localisation" value="Médecin généraliste" placeholder="Profession ?">
+                </div>
+        </div>
+        <div class="modal-footer">
+            <div class="center">
+                <button class="align-center btn"
+                        type="submit"
+                        id="_submit"
+                        name="_submit"
+                        value="trouver"
+                        data-position="bottom"
+                        data-delay="50"
+                        data-tooltip="Enregistrer">
+                    <i class="material-icons">Trouver</i>
+                </button>
+            </div>
+            </form>
         </div>
     </div>
 
@@ -75,4 +106,12 @@
 <style>
 
 </style>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+    </script>
 {% endblock %}

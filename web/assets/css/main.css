@@ -104,13 +104,57 @@
 /*    }*/
 /*}*/
 
-/*@media only screen and (max-device-width: 1920px) {*/
-/*    !* start of hight resolution 1080P *!*/
-/*    .wrapper{*/
-/*        margin-top: 10%;*/
-/*        margin-left: 300px!important;*/
-/*    }*/
-/*}*/
+@media only screen and (max-device-width: 1920px) {
+    /* start of large tablet styles */
+    .wrapper{
+        margin-top: 10%;
+        margin-left: 300px!important;
+    }
+    /*---------- BOX ----------*/
+    .box{
+        background-color: #ffffff;
+        margin-left: 0%;
+        min-width: 400px;
+        min-height: 500px;
+        border-radius: 10px 100px / 120px;
+    }
+    .box-invert{
+        border-radius: 100px 10px / 120px;
+    }
+    .box-single{
+        margin-left: 22%;
+        max-width: 600px!important;
+    }
+    .box-invert:hover{
+        cursor: pointer;
+    }
+    .box:hover{
+        cursor: pointer;
+
+    }
+    .bg-change:hover {
+        border: 2px groove #008ed6;
+        box-shadow: 3px 3px 3px #757575;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+    }
+    .table-top-marge{
+        padding-top: 15%;
+        padding-bottom: 5%;
+    }
+    .table-btn{
+        margin-top: 25%;
+        margin-bottom: 25%;
+    }
+    /*--------------- FORMS ----------------*/
+    label{
+        font-size: 1.2em!important;
+    }
+    .login{
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+}
 
 @media only screen and (max-device-width: 1080px) {
     /* start of hight resolution 1080P */
@@ -153,7 +197,7 @@
 @media only screen and (max-device-width: 1440px) {
     /* start of large tablet styles */
     .wrapper{
-        margin-top: 5%;
+        margin-top: 10%;
         margin-left: 300px!important;
     }
     /*---------- BOX ----------*/
@@ -196,7 +240,12 @@
     label{
         font-size: 1.2em!important;
     }
+    .login{
+        margin-top: 10%;
+        margin-left: 20%;
+    }
 }
+
 
 @media only screen and (max-device-width: 849px) {
     /* start of medium tablet styles */
